@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-
-    
+var yellow =   require('./yellow.jpg');
     
 class Timer extends Component {
     componentDidMount(){
@@ -19,14 +18,28 @@ class Timer extends Component {
     }
     render() {
         var sec = Math.round(this.state.clock/1000);
-        //sec = new Date(sec);
-        
+        var min = Math.floor(sec/60);
+        sec=sec%60 + '';
+        var hour = Math.floor(min/60);
+        min=min%60 + '';
+        var day = Math.floor(hour/24) + '';
+        hour=hour%24 + '';
+        if(sec.length === 1)sec='0'+sec;
+        if(min.length === 1)min='0'+min;
+        if(hour.length === 1)hour='0'+hour;
+        if(day.length === 1)day='0'+day;        
         return (
-            <div>
-                <p>You have been on this site</p><br />
-                <span>{sec}</span>
-                <p></p>
+            <div className="timer-box">
+                <img src={yellow} /> 
+                <ul>
+                    <li>{day}<br/><span>Days</span></li>
+                    <li>{hour}<br/><span>Hours</span></li>
+                    <li>{min}<br/><span>Minutes</span></li>
+                    <li>{sec}<br/><span>Seconds</span></li>
+                    
+                </ul>
             </div>
+
         );
     }
 };

@@ -27,10 +27,37 @@
   to { transform: rotate(360deg); }
 }
 
-span{
-  font-size: 50px;
-  color: #fff;
-  background: #2ecc71;
-  border-radius: 50%;
-  padding: 4px;
+.timer-box{
+  width: 60%;
+  height: 250px;
+  margin: 100px auto;
+  background: rgba(238, 238, 238, 0.774);
+  position:relative;
+  border-radius: 10px;
+  
+}
+
+.timer-box img{
+  position: absolute;
+  border-radius: 10px;
+  top:-55px;
+  left:-55px;
+}
+ul{
+  list-style: none;
+}
+ul li{
+  float: left;
+  width: 21%;
+  margin: 0% 0%;
+  padding: 85px 1%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+ul li span{
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
